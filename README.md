@@ -1,6 +1,7 @@
-# TypeScript Bare Bones Template (v1.0) - bdjeffyp
+# TypeScript Bare Bones Template (v1.0)
+Provided by bdjeffyp
 
-This template consists of a bare bones project that is ready for TypeScript coding right out of the box. The entry point, `index.ts`, consists of simple code that you can erase and add your custom code.
+>This template consists of a bare bones project that is ready for TypeScript coding right out of the box. The entry point, `index.ts`, consists of simple code that you can erase and add your custom code.
 
 ## Why TypeScript?
 TypeScript is a "superset" of JavaScript, by using strong typing of variables. When you save your code changes, Webpack starts the TypeScript compiler, which converts the code into JavaScript for the browser to use. If you have an error, such as trying to assign a number into a string variable, the compiler will halt and tell you where the error occurred. This gives you an advantage of avoiding type mismatch issues that JavaScript would ignore!

@@ -4,11 +4,12 @@
   "description": "A sample project",
   "author": "username",
   "scripts": {
-    "compile": "NODE_ENV=production webpack --config .internals/webpack/webpack.prod.js --color -p --progress --hide-modules --display-optimization-bailout",
     "check:tslint": "tslint --project tsconfig.json --config tslint.json -t stylish",
-    "start": "NODE_ENV=development nodemon -L --watch ../.koji --watch src -e json .internals/development-server"
+    "compile": "cross-env NODE_ENV=production webpack --config .internals/webpack/webpack.prod.js --color -p --progress --hide-modules --display-optimization-bailout",
+    "start": "cross-env NODE_ENV=development nodemon -L --watch ../.koji --watch src -e json .internals/development-server"
   },
   "dependencies": {
+    "cross-env": "^5.2.0",
     "express": "4.16.3",
     "typescript": "^3.4.4",
     "whatwg-fetch": "^3.0.0"
