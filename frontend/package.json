@@ -10,7 +10,8 @@
     "watch": "node ./.internals/watch.js",
     "watch:koji": "koji-tools watch &",
     "watch:client": "webpack-dev-server --config .internals/webpack.development.js --color --inline --hot",
-    "check:tslint": "tslint --project tsconfig.json --config tslint.json -t stylish"
+    "check:tslint": "tslint --project tsconfig.json --config tslint.json -t stylish",
+    "compile": "babel src -d dist --copy-files --ignore \"node_modules/**/*.js\""
   },
   "dependencies": {
     "cross-env": "^5.2.0",
