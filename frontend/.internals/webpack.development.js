@@ -26,7 +26,7 @@ module.exports = require('./webpack.common')({
   watch: true,
 
   entry: [
-    './index.ts'
+    './index.tsx'
   ],
 
   output: {

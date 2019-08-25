@@ -21,7 +21,7 @@ const { HashedModuleIdsPlugin } = require('webpack');
 module.exports = require('./webpack.common')({
   mode: 'production',
 
-  entry: "./index.ts",
+  entry: "./index.tsx",
 
   output: {
     filename: '[name].[chunkhash].js',
