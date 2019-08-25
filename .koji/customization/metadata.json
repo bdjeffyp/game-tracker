@@ -1,0 +1,51 @@
+{
+  "metadata": {
+    "title": "Hello, World!",
+    "description": "A TypeScript skeleton. Change me!",
+    "image": "https://images.koji-cdn.com/2cbe7cc0-739b-481a-8beb-d4d1479cbdac/cda1ce03-d0b8-4216-b394-cc6449354a29.png",
+    "icon": "https://images.koji-cdn.com/2cbe7cc0-739b-481a-8beb-d4d1479cbdac/b8cf69a9-b389-4129-8cde-652da7874612.png",
+    "gaCode": ""
+  },
+  "@@editor": [
+    {
+      "key": "metadata",
+      "name": "Metadata",
+      "icon": "⚙",
+      "source": "metadata.json",
+      "fields": [
+        {
+          "key": "title",
+          "name": "Name for your App",
+          "description": "Will show up as title on Google and Facebook"
+        },
+        {
+          "key": "description",
+          "name": "Description",
+          "description": "Description of your app for Google and Facebook",
+          "type": "textarea"
+        },
+        {
+          "key": "gaCode",
+          "name": "GA Tracking ID",
+          "description": "Tracking ID for Google Analytics",
+          "type": "text",
+          "typeOptions": {
+            "monospace": true
+          }
+        },
+        {
+          "key": "image",
+          "name": "Share Image",
+          "type": "image",
+          "description": "Embedded Image to load when your App is shared"
+        },
+        {
+          "key": "icon",
+          "name": "Icon",
+          "type": "image",
+          "description": "Small Icon for your App"
+        }
+      ]
+    }
+  ]
+}
