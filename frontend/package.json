@@ -4,24 +4,20 @@
   "description": "A sample project",
   "author": "username",
   "scripts": {
-    "start": "npm run watch --",
+    "start": "webpack-dev-server --config .internals/webpack.development.js --color --inline --hot",
     "build": "cross-env NODE_ENV=production webpack --config .internals/webpack.production.js --color -p --progress --hide-modules --display-optimization-bailout",
-    "postbuild": "koji-tools pwa",
-    "watch": "node ./.internals/watch.js",
-    "watch:koji": "koji-tools watch &",
-    "watch:client": "webpack-dev-server --config .internals/webpack.development.js --color --inline --hot",
+    "prestart": "koji-vcc watch &",
     "check:tslint": "tslint --project tsconfig.json --config tslint.json -t stylish"
   },
   "dependencies": {
+    "@withkoji/vcc": "^1.0.3",
     "cross-env": "^5.2.0",
-    "koji-tools": "^0.5.45",
     "whatwg-fetch": "^3.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",
     "@babel/plugin-syntax-dynamic-import": "^7.2.0",
     "@babel/preset-env": "^7.5.5",
-    "@types/koji-tools": "^0.5.0",
     "@types/react": "^16.9.2",
     "@types/react-dom": "^16.9.0",
     "awesome-typescript-loader": "^5.2.1",
