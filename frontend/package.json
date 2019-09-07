@@ -1,8 +1,8 @@
 {
-  "name": "meta-project",
+  "name": "Game Checklist",
   "version": "1.0.0",
-  "description": "A sample project",
-  "author": "username",
+  "description": "Develop a checklist of items for a game, such as items, skills, achievements, etc.",
+  "author": "Jeff Peterson <bdjeffyp>",
   "scripts": {
     "start": "webpack-dev-server --config .internals/webpack.development.js --color --inline --hot",
     "build": "cross-env NODE_ENV=production webpack --config .internals/webpack.production.js --color -p --progress --hide-modules --display-optimization-bailout",

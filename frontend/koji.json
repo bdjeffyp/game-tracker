@@ -1,6 +1,6 @@
 {
 	"pages": [{
-		"name": "App",
+		"name": "Game Checklist",
         "route": "/",
         "path": "frontend"
 	}]
