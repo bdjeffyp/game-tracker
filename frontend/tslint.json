@@ -2,6 +2,14 @@
   "extends": "tslint:recommended",
   "rules": {
     "no-any": true,
-    "no-consecutive-blank-lines": true
+    "no-consecutive-blank-lines": true,
+    "variable-name": {
+      "options": [
+        "ban-keywords",
+        "check-format",
+        "allow-leading-underscore",
+        "allow-pascal-case"
+      ]
+    }
   }
 }
