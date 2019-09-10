@@ -8,10 +8,6 @@ const globalClassNames = {
   header: "ms-App-header",
   leftNav: "ms-App-nav",
   content: "ms-App-content",
-  linkFlair: "Nav-linkFlair",
-  linkFlairStarted: "is-state1",
-  linkFlairBeta: "is-state2",
-  linkFlairRelease: "is-state3"
 };
 
 const headerHeight = 50;
@@ -80,44 +76,6 @@ export const getStyles: IStyleFunction<IAppStyleProps, IAppStyles> = (props: IAp
         WebkitOverflowScrolling: "touch"
       },
       globalClassNames.content
-    ],
-    linkFlair: [
-      {
-        fontSize: 10,
-        textTransform: "upppercase",
-        float: "right",
-        background: theme.palette.neutralTertiaryAlt,
-        color: theme.palette.white,
-        lineHeight: "normal",
-        display: "inline",
-        verticalAlign: "middle",
-        transform: "translateY(-50%)",
-        position: "absolute",
-        right: 20,
-        top: "50%",
-        padding: "2px 6px",
-        borderRadius: 2
-      },
-      globalClassNames.linkFlair
-    ],
-    linkFlairStarted: [
-      {
-        background: theme.palette.yellowLight,
-        color: theme.palette.black
-      },
-      globalClassNames.linkFlairStarted
-    ],
-    linkFlairBeta: [
-      {
-        background: theme.palette.greenLight
-      },
-      globalClassNames.linkFlairBeta
-    ],
-    linkFlairRelease: [
-      {
-        background: theme.palette.green
-      },
-      globalClassNames.linkFlairRelease
     ],
     subComponentStyles: {
       header: {},

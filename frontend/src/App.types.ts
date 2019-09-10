@@ -53,10 +53,6 @@ export interface IAppStyles {
   /** Styles for the container when the nav is displayed on the left */
   leftNavContainer: IStyle;
   content: IStyle;
-  linkFlair: IStyle;
-  linkFlairStarted: IStyle;
-  linkFlairBeta: IStyle;
-  linkFlairRelease: IStyle;
   subComponentStyles: IAppSubComponentStyles;
 }
 

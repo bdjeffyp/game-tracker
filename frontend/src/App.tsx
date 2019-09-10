@@ -1,10 +1,8 @@
 import { Fabric } from "office-ui-fabric-react/lib/Fabric";
 import { INavLink, Nav } from "office-ui-fabric-react/lib/Nav";
 import { Panel, PanelType } from "office-ui-fabric-react/lib/Panel";
-import { IProcessedStyleSet } from "office-ui-fabric-react/lib/Styling";
 import {
   classNamesFunction,
-  css,
   styled
 } from "office-ui-fabric-react/lib/Utilities";
 import {
@@ -14,7 +12,6 @@ import {
 import * as React from "react";
 import { getStyles } from "./App.style";
 import {
-  ExampleStatus,
   IAppProps,
   IAppStyleProps,
   IAppStyles
@@ -30,7 +27,6 @@ const getClassNames = classNamesFunction<IAppStyleProps, IAppStyles>();
 @withResponsiveMode
 export class AppBase extends React.Component<IAppProps, IAppState> {
   public state: IAppState = { isMenuVisible: false };
-  private _classNames: IProcessedStyleSet<IAppStyles>;
 
   constructor(props: IAppProps) {
     super(props);
@@ -51,10 +47,10 @@ export class AppBase extends React.Component<IAppProps, IAppState> {
     } = this.props;
     const { isMenuVisible } = this.state;
 
-    const classNames = (this._classNames = getClassNames(styles, {
+    const classNames = getClassNames(styles, {
       responsiveMode,
       theme,
-    }));
+    });
 
     const isLargeDown = responsiveMode <= ResponsiveMode.large;
 
