@@ -28,9 +28,9 @@ export interface IAppLinkGroup extends INavLinkGroup {
 
 export interface IAppDefinition {
   appTitle: string;
-  testPages: IAppLink[];
-  examplePages: IAppLinkGroup[];
-  headerLinks: IAppLink[];
+  testPages?: IAppLink[];
+  examplePages?: IAppLinkGroup[];
+  headerLinks?: IAppLink[];
 }
 
 export interface IAppProps extends IWithResponsiveModeState {

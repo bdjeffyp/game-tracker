@@ -1,6 +1,6 @@
 {
   "name": "game-tracker",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Create checklists to track progress on any game. Track items, achievements, etc.",
   "author": "Jeff Peterson <bdjeffyp>",
   "repository": {
@@ -10,11 +10,10 @@
   "scripts": {
     "start": "webpack-dev-server --config .internals/webpack.development.js --color --inline --hot",
     "build": "cross-env NODE_ENV=production webpack --config .internals/webpack.production.js --color -p --progress --hide-modules --display-optimization-bailout",
-    "prestart": "koji-vcc watch &",
     "check:tslint": "tslint --project tsconfig.json --config tslint.json -t stylish"
   },
   "dependencies": {
-    "@withkoji/vcc": "^1.0.3",
+    "@withkoji/vcc": "^1.0.7",
     "cross-env": "^5.2.0",
     "office-ui-fabric-react": "^7.31.1",
     "whatwg-fetch": "^3.0.0"
