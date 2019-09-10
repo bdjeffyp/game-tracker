@@ -36,7 +36,6 @@ export interface IHeaderStyles {
 }
 
 export interface IHeaderSubComponentStyles {
-  // TODO: remove any after TS 3 upgrade
   // tslint:disable:no-any
   /** Styles for the hamburger and settings icons */
   icons: IStyleFunctionOrObject<IIconStyleProps, any>;

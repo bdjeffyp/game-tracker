@@ -3,7 +3,7 @@ import * as React from "react";
 import { ContextualMenu, DirectionalHint, IContextualMenuItem } from "office-ui-fabric-react/lib/ContextualMenu";
 import { FocusZone, FocusZoneDirection } from "office-ui-fabric-react/lib/FocusZone";
 import { Icon } from "office-ui-fabric-react/lib/Icon";
-import { classNamesFunction, getRTL, setRTL, styled } from "office-ui-fabric-react/lib/Utilities";
+import { classNamesFunction, styled } from "office-ui-fabric-react/lib/Utilities";
 
 import { getStyles } from "./Header.style";
 import { IHeaderProps, IHeaderStyleProps, IHeaderStyles } from "./Header.types";
@@ -18,12 +18,9 @@ export interface IHeaderState {
 const getClassNames = classNamesFunction<IHeaderStyleProps, IHeaderStyles>();
 
 export class HeaderBase extends React.Component<IHeaderProps, IHeaderState> {
-  private _isRTLEnabled: boolean;
-
   constructor(props: IHeaderProps) {
     super(props);
 
-    this._isRTLEnabled = getRTL();
     this.state = {
       contextMenu: undefined
     };
@@ -101,18 +98,7 @@ export class HeaderBase extends React.Component<IHeaderProps, IHeaderState> {
 
   private _getOptionMenuItems(): IContextualMenuItem[] {
     return [
-      {
-        key: "isRTL",
-        name: `Render in ${this._isRTLEnabled ? "LTR" : "RTL"}`,
-        iconProps: { iconName: "Settings" },
-        onClick: this._onRTLToggled
-      }
     ];
-  }
-
-  private _onRTLToggled = () => {
-    setRTL(!this._isRTLEnabled, true);
-    location.reload();
   }
 
   private _onDismiss = () => {
