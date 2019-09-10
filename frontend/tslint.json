@@ -13,6 +13,8 @@
     },
     "trailing-comma": false,
     "object-literal-sort-keys": false,
-    "typedef": true
+    "typedef": true,
+    "no-unused-variable": true,
+    "no-unused-expression": true
   }
 }

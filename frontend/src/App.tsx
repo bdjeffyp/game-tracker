@@ -42,7 +42,7 @@ export class AppBase extends React.Component<IAppProps, IAppState> {
       this.props.appDefinition.appTitle.replace(" - ", " ");
   }
 
-  public render(): JSX.Element {
+  public render(): React.ReactNode {
     const {
       appDefinition,
       styles,
@@ -116,30 +116,11 @@ export class AppBase extends React.Component<IAppProps, IAppState> {
   }
 
   private _onRenderLink = (link: INavLink): JSX.Element => {
-    const classNames = this._classNames;
-
     // Nav-linkText is a class name from the Fabric nav
     return (
-      <>
-        <span key={1} className="Nav-linkText">
-          {link.name}
-        </span>
-        {link.status !== undefined && (
-          <span
-            key={2}
-            className={css(
-              classNames.linkFlair,
-              link.status === ExampleStatus.started &&
-                classNames.linkFlairStarted,
-              link.status === ExampleStatus.beta && classNames.linkFlairBeta,
-              link.status === ExampleStatus.release &&
-                classNames.linkFlairRelease
-            )}
-          >
-            {ExampleStatus[link.status]}
-          </span>
-        )}
-      </>
+      <span key={1} className="Nav-linkText">
+        {link.name}
+      </span>
     );
   }
 }

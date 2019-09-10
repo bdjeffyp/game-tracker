@@ -44,10 +44,7 @@ export interface IAppProps extends IWithResponsiveModeState {
 }
 
 export type IAppStyleProps = Required<Pick<IAppProps, "responsiveMode">> &
-  Pick<IAppProps, "theme"> & {
-    /** Whether the page needs to show only the examples card */
-    showOnlyExamples?: boolean;
-  };
+  Pick<IAppProps, "theme">;
 
 export interface IAppStyles {
   root: IStyle;
