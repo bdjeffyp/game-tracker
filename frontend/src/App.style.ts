@@ -1,6 +1,7 @@
 import { getTheme } from "office-ui-fabric-react/lib/Styling";
-import { IStyleFunction } from "office-ui-fabric-react/lib/Utilities";
+import { classNamesFunction, IStyleFunction } from "office-ui-fabric-react/lib/Utilities";
 import { ResponsiveMode } from "office-ui-fabric-react/lib/utilities/decorators/withResponsiveMode";
+
 import { IAppStyleProps, IAppStyles } from "./App.types";
 
 const globalClassNames = {
@@ -13,21 +14,22 @@ const globalClassNames = {
 const headerHeight = 50;
 const navWidth = 300;
 
-export const getStyles: IStyleFunction<IAppStyleProps, IAppStyles> = (props: IAppStyleProps) => {
+export const getAppStyles: IStyleFunction<IAppStyleProps, IAppStyles> = (props: IAppStyleProps) => {
   const { responsiveMode, theme = getTheme() } = props;
   const isLargeDown = responsiveMode <= ResponsiveMode.large;
+
   return {
     root: [
       {
         selectors: {
           ":global(body)": {
-            "padding": 0,
-            "margin": 0,
-            "position": "absolute",
-            "left": 0,
-            "top": 0,
-            "minWidth": "100%",
-            "minHeight": "100%",
+            padding: 0,
+            margin: 0,
+            position: "absolute",
+            left: 0,
+            top: 0,
+            minWidth: "100%",
+            minHeight: "100%",
             "-webkit-tap-highlight-color": "transparent"
           }
         }
@@ -95,3 +97,5 @@ export const getStyles: IStyleFunction<IAppStyleProps, IAppStyles> = (props: IAp
     }
   };
 };
+
+export const getAppClassNames = classNamesFunction<IAppStyleProps, IAppStyles>();

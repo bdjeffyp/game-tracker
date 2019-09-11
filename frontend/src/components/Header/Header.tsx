@@ -1,12 +1,10 @@
+import { ContextualMenu, DirectionalHint, IContextualMenuItem } from "office-ui-fabric-react/lib/ContextualMenu";
+import { Icon } from "office-ui-fabric-react/lib/Icon";
+import { styled } from "office-ui-fabric-react/lib/Utilities";
 import * as React from "react";
 
-import { ContextualMenu, DirectionalHint, IContextualMenuItem } from "office-ui-fabric-react/lib/ContextualMenu";
-import { FocusZone, FocusZoneDirection } from "office-ui-fabric-react/lib/FocusZone";
-import { Icon } from "office-ui-fabric-react/lib/Icon";
-import { classNamesFunction, styled } from "office-ui-fabric-react/lib/Utilities";
-
-import { getStyles } from "./Header.style";
-import { IHeaderProps, IHeaderStyleProps, IHeaderStyles } from "./Header.types";
+import { getHeaderClassNames, getHeaderStyles } from "./Header.style";
+import { IHeaderProps, IHeaderStyleProps, IHeaderStyles, ISideLink } from "./Header.types";
 
 export interface IHeaderState {
   contextMenu?: {
@@ -14,8 +12,6 @@ export interface IHeaderState {
     items: IContextualMenuItem[];
   };
 }
-
-const getClassNames = classNamesFunction<IHeaderStyleProps, IHeaderStyles>();
 
 export class HeaderBase extends React.Component<IHeaderProps, IHeaderState> {
   constructor(props: IHeaderProps) {
@@ -33,7 +29,7 @@ export class HeaderBase extends React.Component<IHeaderProps, IHeaderState> {
     // For screen sizes large down, hide the side links.
     const sideLinks = isLargeDown ? [] : this.props.sideLinks;
 
-    const classNames = getClassNames(styles, { theme });
+    const classNames = getHeaderClassNames(styles, { theme });
     const { subComponentStyles } = classNames;
 
     return (
@@ -45,10 +41,10 @@ export class HeaderBase extends React.Component<IHeaderProps, IHeaderState> {
             </button>
           )}
           <div className={classNames.title}>{title}</div>
-          <div className={classNames.buttons}>
+          {/* <div className={classNames.buttons}>
             <FocusZone direction={FocusZoneDirection.horizontal}>
               {sideLinks
-                .map((link) => (
+                .map((link: ISideLink) => (
                   <a key={link.url} className={classNames.button} href={link.url}>
                     {link.name}
                   </a>
@@ -59,7 +55,7 @@ export class HeaderBase extends React.Component<IHeaderProps, IHeaderState> {
                   </button>
                 ])}
             </FocusZone>
-          </div>
+          </div> */}
         </div>
         {contextMenu && (
           <ContextualMenu
@@ -75,7 +71,7 @@ export class HeaderBase extends React.Component<IHeaderProps, IHeaderState> {
     );
   }
 
-  private _onMenuClick = () => {
+  private _onMenuClick = (): void => {
     const { onIsMenuVisibleChanged, isMenuVisible } = this.props;
 
     if (onIsMenuVisibleChanged) {
@@ -101,16 +97,16 @@ export class HeaderBase extends React.Component<IHeaderProps, IHeaderState> {
     ];
   }
 
-  private _onDismiss = () => {
+  private _onDismiss = (): void => {
     this.setState({
       contextMenu: undefined
     });
   }
 }
 
-export const Header: React.StatelessComponent<IHeaderProps> = styled<IHeaderProps, IHeaderStyleProps, IHeaderStyles>(
+export const Header: React.FunctionComponent<IHeaderProps> = styled<IHeaderProps, IHeaderStyleProps, IHeaderStyles>(
   HeaderBase,
-  getStyles,
+  getHeaderStyles,
   undefined,
   {
     scope: "Header"

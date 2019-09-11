@@ -2,7 +2,6 @@ import { Fabric } from "office-ui-fabric-react/lib/Fabric";
 import { INavLink, Nav } from "office-ui-fabric-react/lib/Nav";
 import { Panel, PanelType } from "office-ui-fabric-react/lib/Panel";
 import {
-  classNamesFunction,
   styled
 } from "office-ui-fabric-react/lib/Utilities";
 import {
@@ -10,7 +9,8 @@ import {
   withResponsiveMode
 } from "office-ui-fabric-react/lib/utilities/decorators/withResponsiveMode";
 import * as React from "react";
-import { getStyles } from "./App.style";
+
+import { getAppClassNames, getAppStyles } from "./App.style";
 import {
   IAppProps,
   IAppStyleProps,
@@ -23,39 +23,33 @@ export interface IAppState {
   isMenuVisible: boolean;
 }
 
-const getClassNames = classNamesFunction<IAppStyleProps, IAppStyles>();
-
 @withResponsiveMode
 export class AppBase extends React.Component<IAppProps, IAppState> {
   public state: IAppState = { isMenuVisible: false };
 
   constructor(props: IAppProps) {
     super(props);
-
   }
 
-  public componentDidMount() {
-    document.title =
-      this.props.appDefinition.appTitle.replace(" - ", " ");
+  public componentDidMount(): void {
+    document.title = this.props.appDefinition.appTitle.replace(" - ", " ");
   }
 
   public render(): React.ReactNode {
-    const {
-      appDefinition,
-      styles,
-      responsiveMode = ResponsiveMode.xLarge,
-      theme
-    } = this.props;
-    const { isMenuVisible } = this.state;
+    const appDefinition = this.props.appDefinition;
+    const styles = this.props.styles;
+    const responsiveMode = this.props.responsiveMode ? this.props.responsiveMode : ResponsiveMode.xLarge;
+    const theme = this.props.theme;
+    const isMenuVisible = this.state.isMenuVisible;
 
-    const classNames = getClassNames(styles, {
+    const classNames = getAppClassNames(styles, {
       responsiveMode,
       theme,
     });
 
     const isLargeDown = responsiveMode <= ResponsiveMode.large;
 
-    const nav = (
+    const nav: React.ReactNode = (
       <Nav
         groups={appDefinition.examplePages}
         onLinkClick={this._onLinkClick}
@@ -122,10 +116,10 @@ export class AppBase extends React.Component<IAppProps, IAppState> {
   }
 }
 
-export const App: React.StatelessComponent<IAppProps> = styled<
+export const App: React.FunctionComponent<IAppProps> = styled<
   IAppProps,
   IAppStyleProps,
   IAppStyles
->(AppBase, getStyles, undefined, {
+>(AppBase, getAppStyles, undefined, {
   scope: "App"
 });

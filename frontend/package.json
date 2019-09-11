@@ -39,6 +39,8 @@
     "style-loader": "0.21.0",
     "svg-url-loader": "2.3.2",
     "tslint": "^5.16.0",
+    "tslint-microsoft-contrib": "^6.2.0",
+    "tslint-react": "^4.0.0",
     "typescript": "^3.5.3",
     "url-loader": "1.0.1",
     "webpack": "4.12.0",
