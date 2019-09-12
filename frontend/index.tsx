@@ -1,3 +1,4 @@
+import { initializeIcons } from "@uifabric/icons";
 import Koji from "@withkoji/vcc";
 import * as React from "react";
 import * as ReactDom from "react-dom";
@@ -13,6 +14,8 @@ console.log(config);
 const definition: IAppDefinition = {
   appTitle: "Game Tracker"
 }
+
+initializeIcons();
 
 ReactDom.render(
   <App appDefinition={definition}/>,

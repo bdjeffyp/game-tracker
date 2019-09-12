@@ -49,7 +49,6 @@ module.exports = require('./webpack.common')({
   plugins: [
     new HtmlWebpackPlugin({
       inject: true,
-      title: 'Derp',
       template: './index.html',
     }),
   ],

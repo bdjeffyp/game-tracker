@@ -1,3 +1,3 @@
 # Game Tracker
 
-Create checklists to track progress on any game. Track items, achievements, etc.
+Create/download trackers for any game. Monitor progress in achievements, tasks, skill trees, item collections, etc.
