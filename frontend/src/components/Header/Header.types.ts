@@ -9,7 +9,7 @@ export interface ISideLink {
 
 export interface IHeaderProps {
   title: string;
-  sideLinks: ISideLink[];
+  sideLinks?: ISideLink[];
 
   isMenuVisible: boolean;
   onIsMenuVisibleChanged?: (isMenuVisible: boolean) => void;

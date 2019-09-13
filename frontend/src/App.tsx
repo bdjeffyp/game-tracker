@@ -49,52 +49,49 @@ export class AppBase extends React.Component<IAppProps, IAppState> {
 
     const isLargeDown = responsiveMode <= ResponsiveMode.large;
 
-    const nav: React.ReactNode = (
-      <Nav
-        groups={appDefinition.examplePages}
-        onLinkClick={this._onLinkClick}
-        onRenderLink={this._onRenderLink}
-        styles={classNames.subComponentStyles.nav}
-      />
-    );
+    // const nav: React.ReactNode = (
+    //   <Nav
+    //     groups={appDefinition.pages}
+    //     onLinkClick={this._onLinkClick}
+    //     onRenderLink={this._onRenderLink}
+    //     styles={classNames.subComponentStyles.nav}
+    //   />
+    // );
 
     return (
-      <Fabric className={classNames.root}>
-        <div className={classNames.headerContainer}>
-          <Header
-            isLargeDown={isLargeDown}
-            title={appDefinition.appTitle}
-            sideLinks={appDefinition.headerLinks}
-            isMenuVisible={isMenuVisible}
-            onIsMenuVisibleChanged={this._onIsMenuVisibleChanged}
-            styles={classNames.subComponentStyles.header}
-          />
-        </div>
+      <><div className={classNames.headerContainer}>
+        <Header
+          isLargeDown={isLargeDown}
+          title={appDefinition.appTitle}
+          isMenuVisible={isMenuVisible}
+          onIsMenuVisibleChanged={this._onIsMenuVisibleChanged}
+          styles={classNames.subComponentStyles.header}
+        />
+      </div>
 
-        {!isLargeDown && (
-          <div className={classNames.leftNavContainer}>{nav}</div>
-        )}
+      {/* {!isLargeDown && (
+        <div className={classNames.leftNavContainer}>{nav}</div>
+      )} */}
 
-        <div className={classNames.content} data-is-scrollable="true">
-          {this.props.children}
-        </div>
+      <div className={classNames.content} data-is-scrollable="true">
+        {this.props.children}
+      </div>
 
-        {isLargeDown && (
-          <Panel
-            isOpen={isMenuVisible}
-            isLightDismiss={true}
-            type={PanelType.smallFixedNear}
-            // Close by tapping outside the panel
-            hasCloseButton={false}
-            // Use onDismissed (not onDismiss) to prevent _onIsMenuVisibleChanged being called twice
-            // (once by the panel and once by the header button)
-            onDismissed={this._onIsMenuVisibleChanged.bind(this, false)}
-            styles={classNames.subComponentStyles.navPanel}
-          >
-            {nav}
-          </Panel>
-        )}
-      </Fabric>
+      {isLargeDown && (
+        <Panel
+          isOpen={isMenuVisible}
+          isLightDismiss={true}
+          type={PanelType.smallFixedNear}
+          // Close by tapping outside the panel
+          hasCloseButton={false}
+          // Use onDismissed (not onDismiss) to prevent _onIsMenuVisibleChanged being called twice
+          // (once by the panel and once by the header button)
+          onDismissed={this._onIsMenuVisibleChanged.bind(this, false)}
+          styles={classNames.subComponentStyles.navPanel}
+        >
+          {/* {nav} */}
+        </Panel>
+      )}</>
     );
   }
 
