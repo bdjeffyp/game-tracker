@@ -1,24 +1,13 @@
-import { Fabric } from "office-ui-fabric-react/lib/Fabric";
 import { INavLink, Nav } from "office-ui-fabric-react/lib/Nav";
 import { Panel, PanelType } from "office-ui-fabric-react/lib/Panel";
-import {
-  styled
-} from "office-ui-fabric-react/lib/Utilities";
-import {
-  ResponsiveMode,
-  withResponsiveMode
-} from "office-ui-fabric-react/lib/utilities/decorators/withResponsiveMode";
+import { styled } from "office-ui-fabric-react/lib/Utilities";
+import { ResponsiveMode, withResponsiveMode } from "office-ui-fabric-react/lib/utilities/decorators/withResponsiveMode";
 import * as React from "react";
 
 import { getAppClassNames, getAppStyles } from "./App.style";
-import {
-  IAppProps,
-  IAppStyleProps,
-  IAppStyles
-} from "./App.types";
+import { IAppProps, IAppStyleProps, IAppStyles } from "./App.types";
 import { Header } from "./components/Header/Header";
-// TODO!!!!! Using the wrong stuff here!
-// Go here: https://github.com/OfficeDev/office-ui-fabric-react/tree/master/apps/fabric-website
+
 export interface IAppState {
   isMenuVisible: boolean;
 }
@@ -44,7 +33,7 @@ export class AppBase extends React.Component<IAppProps, IAppState> {
 
     const classNames = getAppClassNames(styles, {
       responsiveMode,
-      theme,
+      theme
     });
 
     const isLargeDown = responsiveMode <= ResponsiveMode.large;
@@ -59,49 +48,51 @@ export class AppBase extends React.Component<IAppProps, IAppState> {
     // );
 
     return (
-      <><div className={classNames.headerContainer}>
-        <Header
-          isLargeDown={isLargeDown}
-          title={appDefinition.appTitle}
-          isMenuVisible={isMenuVisible}
-          onIsMenuVisibleChanged={this._onIsMenuVisibleChanged}
-          styles={classNames.subComponentStyles.header}
-        />
-      </div>
+      <>
+        <div className={classNames.headerContainer}>
+          <Header
+            isLargeDown={isLargeDown}
+            title={appDefinition.appTitle}
+            isMenuVisible={isMenuVisible}
+            onIsMenuVisibleChanged={this._onIsMenuVisibleChanged}
+            styles={classNames.subComponentStyles.header}
+          />
+        </div>
 
-      {/* {!isLargeDown && (
-        <div className={classNames.leftNavContainer}>{nav}</div>
-      )} */}
+        {/* {!isLargeDown && (
+          <div className={classNames.leftNavContainer}>{nav}</div>
+        )} */}
 
-      <div className={classNames.content} data-is-scrollable="true">
-        {this.props.children}
-      </div>
+        <div className={classNames.content} data-is-scrollable="true">
+          {this.props.children}
+        </div>
 
-      {isLargeDown && (
-        <Panel
-          isOpen={isMenuVisible}
-          isLightDismiss={true}
-          type={PanelType.smallFixedNear}
-          // Close by tapping outside the panel
-          hasCloseButton={false}
-          // Use onDismissed (not onDismiss) to prevent _onIsMenuVisibleChanged being called twice
-          // (once by the panel and once by the header button)
-          onDismissed={this._onIsMenuVisibleChanged.bind(this, false)}
-          styles={classNames.subComponentStyles.navPanel}
-        >
-          {/* {nav} */}
-        </Panel>
-      )}</>
+        {isLargeDown && (
+          <Panel
+            isOpen={isMenuVisible}
+            isLightDismiss={true}
+            type={PanelType.smallFixedNear}
+            // Close by tapping outside the panel
+            hasCloseButton={false}
+            // Use onDismissed (not onDismiss) to prevent _onIsMenuVisibleChanged being called twice
+            // (once by the panel and once by the header button)
+            onDismissed={this._onIsMenuVisibleChanged.bind(this, false)}
+            styles={classNames.subComponentStyles.navPanel}
+          >
+            {/* {nav} */}
+          </Panel>
+        )}
+      </>
     );
   }
 
   private _onIsMenuVisibleChanged = (isMenuVisible: boolean): void => {
     this.setState({ isMenuVisible });
-  }
+  };
 
   private _onLinkClick = (): void => {
     this.setState({ isMenuVisible: false });
-  }
+  };
 
   private _onRenderLink = (link: INavLink): JSX.Element => {
     // Nav-linkText is a class name from the Fabric nav
@@ -110,13 +101,14 @@ export class AppBase extends React.Component<IAppProps, IAppState> {
         {link.name}
       </span>
     );
-  }
+  };
 }
 
-export const App: React.FunctionComponent<IAppProps> = styled<
-  IAppProps,
-  IAppStyleProps,
-  IAppStyles
->(AppBase, getAppStyles, undefined, {
-  scope: "App"
-});
+export const App: React.FunctionComponent<IAppProps> = styled<IAppProps, IAppStyleProps, IAppStyles>(
+  AppBase,
+  getAppStyles,
+  undefined,
+  {
+    scope: "App"
+  }
+);

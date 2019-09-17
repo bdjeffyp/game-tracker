@@ -68,7 +68,7 @@ export interface IAppDefinition {
   /** Text to display in a badge in the header */
   badgeText?: string;
   /** Pages of the app */
-  pages: INavPage;
+  pages: INavPage[];
   /** Location of the app's logo */
   appLogoSource?: string;
   /** Setup and display any message bars below the header */

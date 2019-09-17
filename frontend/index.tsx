@@ -6,7 +6,7 @@ import * as ReactDom from "react-dom";
 
 import { App } from "./src/App";
 import { IAppDefinition, INavPage, IRedirect } from "./src/App.types";
-import { currentFabricBreakpoint } from "./src/utilities"
+import { currentFabricBreakpoint } from "./src/utilities";
 import { Route, Router } from "./src/utilities/router";
 
 initializeIcons();
@@ -22,11 +22,11 @@ const definition: IAppDefinition = {
     title: "Main",
     url: "/home"
   }
-}
+};
 let rootElement: HTMLElement;
 
 // Entry point
-if (document.readyState === 'interactive' || document.readyState === 'complete') {
+if (document.readyState === "interactive" || document.readyState === "complete") {
   _onLoad();
 } else {
   window.onload = _onLoad;
@@ -66,14 +66,14 @@ function _onLoad(): void {
   currentFabricBreakpoint();
 
   const app = (props: {}) => <App appDefinition={definition} {...props} />;
-  ReactDom.render(
+  const fabric = (
     <Fabric>
       <Router>
-        <Route component={app}>{/*_getAppRoutes()*/}</Route>
+        <Route component={app}>{/* _getAppRoutes() */}</Route>
       </Router>
-    </Fabric>,
-    rootElement
+    </Fabric>
   );
+  ReactDom.render(fabric, rootElement);
 }
 
 function _onUnload(): void {
@@ -82,7 +82,7 @@ function _onUnload(): void {
   }
 }
 
-function _handleRedirects(redirects?: IRedirect[]) {
+function _handleRedirects(redirects?: IRedirect[]): void {
   if (redirects) {
     const hash = window.location.hash;
     _redirectUrls(redirects, hash);
@@ -92,7 +92,7 @@ function _handleRedirects(redirects?: IRedirect[]) {
   }
 }
 
-function _redirectUrls(redirects: IRedirect[], hash: string) {
+function _redirectUrls(redirects: IRedirect[], hash: string): void {
   for (const { from, to } of redirects) {
     const isMatch = typeof from === "string" ? hash.indexOf(from) !== -1 : from.test(hash);
     if (isMatch) {

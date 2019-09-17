@@ -21,7 +21,6 @@
     "jsx-key": true,
     "jsx-no-lambda": true,
     "jsx-self-close": true,
-    "jsx-wrap-multiline": true,
     "jsx-no-multiline-js": false,
     "jsx-no-string-ref": true,
     "jsx-ban-props": [
@@ -31,10 +30,6 @@
     ],
     "ban": [
       true,
-      {
-        "name": ["window", "addEventListener"],
-        "message": "Flow the layout with CSS instead of calculating with it with js"
-      },
       {
         "name": ["*", "forceUpdate"],
         "message": "Terrible practice to use forceUpdate. Make better use of props/state instead."
