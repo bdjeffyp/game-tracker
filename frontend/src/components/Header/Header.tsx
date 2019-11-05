@@ -20,6 +20,7 @@ export class HeaderBase extends React.Component<IHeaderProps, IHeaderState> {
     this.state = {
       contextMenu: undefined
     };
+
   }
 
   public render(): React.ReactNode {
