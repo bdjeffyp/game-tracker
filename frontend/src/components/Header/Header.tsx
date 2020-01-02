@@ -1,6 +1,4 @@
-import { ContextualMenu, DirectionalHint, IContextualMenuItem } from "office-ui-fabric-react/lib/ContextualMenu";
-import { Icon } from "office-ui-fabric-react/lib/Icon";
-import { styled } from "office-ui-fabric-react/lib/Utilities";
+import { ContextualMenu, DirectionalHint, Icon, IContextualMenuItem, styled } from "office-ui-fabric-react";
 import * as React from "react";
 
 import { getHeaderClassNames, getHeaderStyles } from "./Header.style";

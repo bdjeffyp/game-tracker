@@ -1,5 +1,5 @@
 // From Microsoft's Fabric Website code
-import { initializeComponentRef, on } from 'office-ui-fabric-react/lib/Utilities';
+import { initializeComponentRef, on } from 'office-ui-fabric-react';
 import * as React from 'react';
 
 import { IRouteProps } from './Route';

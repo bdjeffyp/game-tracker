@@ -18,10 +18,10 @@ console.log(config);
 // Prep the app definition
 const definition: IAppDefinition = {
   appTitle: "Game Tracker",
-  pages: {
+  pages: [{
     title: "Main",
     url: "/home"
-  }
+  }]
 };
 let rootElement: HTMLElement;
 

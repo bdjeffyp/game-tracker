@@ -1,5 +1,4 @@
-import { IStyleFunctionOrObject } from 'office-ui-fabric-react';
-import { IMessageBarStyleProps, IMessageBarStyles } from 'office-ui-fabric-react/lib/MessageBar';
+import { IMessageBarStyleProps, IMessageBarStyles, IStyleFunctionOrObject } from 'office-ui-fabric-react';
 
 export interface IAppMessageBarProps {
   /** Text for the message bar */

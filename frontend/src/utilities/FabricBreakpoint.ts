@@ -1,4 +1,4 @@
-import * as Styling from 'office-ui-fabric-react/lib/Styling';
+import * as Styling from 'office-ui-fabric-react';
 
 export type FabricBreakpoint = 'sm' | 'md' | 'lg' | 'xl' | 'xxl' | 'xxxl';
 

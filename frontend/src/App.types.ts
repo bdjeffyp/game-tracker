@@ -1,11 +1,12 @@
 import {
   INavLink,
   INavLinkGroup,
-  INavStyleProps
-} from "office-ui-fabric-react/lib/Nav";
-import { IPanelStyleProps } from "office-ui-fabric-react/lib/Panel";
-import { IStyle, ITheme } from "office-ui-fabric-react/lib/Styling";
-import { IStyleFunctionOrObject } from "office-ui-fabric-react/lib/Utilities";
+  INavStyleProps,
+  IPanelStyleProps,
+  IStyle,
+  IStyleFunctionOrObject,
+  ITheme
+} from "office-ui-fabric-react";
 import { IWithResponsiveModeState } from "office-ui-fabric-react/lib/utilities/decorators/withResponsiveMode";
 
 import { IHeaderStyleProps } from "./components/Header/Header.types";

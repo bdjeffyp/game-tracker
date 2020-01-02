@@ -1,8 +1,8 @@
-import { getDocument } from "office-ui-fabric-react/lib/Utilities";
+import { getDocument } from "office-ui-fabric-react";
 
 import { INavPage } from "../App.types";
 
-import { removeAnchorLink } from "./removeAnchorLink";
+// import { removeAnchorLink } from "./removeAnchorLink";
 
 const doc = getDocument();
 const _urlResolver = doc && doc.createElement("a");
@@ -20,7 +20,7 @@ export function isPageActive(componentUrl: string): boolean {
     return true;
   }
 
-  return removeAnchorLink(location.href) === target;
+  // return removeAnchorLink(location.href) === target;
 }
 
 export function hasActiveChild(page: INavPage): boolean {

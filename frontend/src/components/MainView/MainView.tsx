@@ -1,4 +1,4 @@
-import { Async } from "@uifabric/utilities";
+import { Async } from "office-ui-fabric-react";
 import * as React from "react";
 
 import { IAppDefinition, INavPage } from "../../App.types";
@@ -46,7 +46,7 @@ export class MainView extends React.Component<IMainViewProps, IMainViewState> {
     window.removeEventListener("hashchange", this._handleRouteChange);
   }
 
-  public U
+  // public U
 
   private _getNavData = (): Partial<IMainViewState> => {
     const pages = this.props.appDefinition.pages;

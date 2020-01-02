@@ -1,6 +1,4 @@
-import { IIconStyles } from "office-ui-fabric-react";
-import { getFocusStyle, getTheme, IRawStyle } from "office-ui-fabric-react/lib/Styling";
-import { classNamesFunction, IStyleFunction } from "office-ui-fabric-react/lib/Utilities";
+import { classNamesFunction, getFocusStyle, getTheme, IIconStyles, IRawStyle, IStyleFunction } from "office-ui-fabric-react";
 
 import { IHeaderStyleProps, IHeaderStyles } from "./Header.types";
 

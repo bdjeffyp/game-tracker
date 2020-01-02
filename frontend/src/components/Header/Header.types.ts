@@ -1,6 +1,4 @@
-import { IIconStyleProps } from "office-ui-fabric-react/lib/Icon";
-import { IStyle, ITheme } from "office-ui-fabric-react/lib/Styling";
-import { IStyleFunctionOrObject } from "office-ui-fabric-react/lib/Utilities";
+import { IIconStyleProps, IStyle, IStyleFunctionOrObject, ITheme } from "office-ui-fabric-react";
 
 export interface ISideLink {
   name: string;
