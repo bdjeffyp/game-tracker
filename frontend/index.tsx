@@ -1,3 +1,8 @@
+/**
+ * Game Checklist
+ * An app to track progress in your games!
+ * Uses Fabric UI for controls: https://github.com/OfficeDev/office-ui-fabric-react/tree/master/apps/fabric-website
+ */
 import { initializeIcons } from "@uifabric/icons";
 import Koji from "@withkoji/vcc";
 import { Fabric } from "office-ui-fabric-react";
@@ -13,7 +18,6 @@ initializeIcons();
 
 // Get handle for Koji VCC files
 const config = Koji.config;
-console.log(config);
 
 // Prep the app definition
 const definition: IAppDefinition = {
@@ -34,24 +38,24 @@ if (document.readyState === "interactive" || document.readyState === "complete")
 window.onunload = _onUnload;
 
 // Route preps
-// function _createRoutes(_pages: INavPage[]): React.ReactNode[] {
-//   let routes: React.ReactNode[] = [];
+function _createRoutes(_pages: INavPage[]): React.ReactNode[] {
+  let routes: React.ReactNode[] = [];
 
-//   _pages.forEach((page: INavPage) => {
-//     routes.push(<Route key={page.url} path={page.url} component={page.component} getComponent={page.getComponent} />);
-//     if (page.pages) {
-//       // Layers of pages!
-//       routes = routes.concat(_createRoutes(page.pages));
-//     }
-//   });
+  _pages.forEach((page: INavPage) => {
+    routes.push(<Route key={page.url} path={page.url} component={page.component} getComponent={page.getComponent} />);
+    if (page.pages) {
+      // Layers of pages!
+      routes = routes.concat(_createRoutes(page.pages));
+    }
+  });
 
-//   return routes;
-// }
-// function _getAppRoutes(): React.ReactNode[] {
-//   const routes: React.ReactNode[] = _createRoutes(definition.pages);
+  return routes;
+}
+function _getAppRoutes(): React.ReactNode[] {
+  const routes: React.ReactNode[] = _createRoutes(definition.pages);
 
-//   return routes;
-// }
+  return routes;
+}
 
 function _onLoad(): void {
   if (!window.location.hash) {
@@ -69,7 +73,7 @@ function _onLoad(): void {
   const fabric = (
     <Fabric>
       <Router>
-        <Route component={app}>{/* _getAppRoutes() */}</Route>
+        <Route component={app}>{_getAppRoutes()}</Route>
       </Router>
     </Fabric>
   );

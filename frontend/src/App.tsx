@@ -38,14 +38,14 @@ export class AppBase extends React.Component<IAppProps, IAppState> {
 
     const isLargeDown = responsiveMode <= ResponsiveMode.large;
 
-    // const nav: React.ReactNode = (
-    //   <Nav
-    //     groups={appDefinition.pages}
-    //     onLinkClick={this._onLinkClick}
-    //     onRenderLink={this._onRenderLink}
-    //     styles={classNames.subComponentStyles.nav}
-    //   />
-    // );
+    const nav: React.ReactNode = (
+      <Nav
+        pages={appDefinition.pages}
+        onLinkClick={this._onLinkClick}
+        onRenderLink={this._onRenderLink}
+        styles={classNames.subComponentStyles.nav}
+      />
+    );
 
     return (
       <>
@@ -64,6 +64,7 @@ export class AppBase extends React.Component<IAppProps, IAppState> {
         )} */}
 
         <div className={classNames.content} data-is-scrollable="true">
+          derp
           {this.props.children}
         </div>
 

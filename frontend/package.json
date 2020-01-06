@@ -8,6 +8,8 @@
   },
   "license": "MIT",
   "scripts": {
+    "watch": "koji-vcc watch-ts",
+    "start-windows": "npm-run-all -p watch start",
     "start": "webpack-dev-server --config .internals/webpack.development.js --color --inline --hot",
     "build": "cross-env NODE_ENV=production webpack --config .internals/webpack.production.js --color -p --progress --hide-modules --display-optimization-bailout",
     "check:tslint": "tslint --project tsconfig.json --config tslint.json -t stylish"
@@ -15,6 +17,7 @@
   "dependencies": {
     "@withkoji/vcc": "^1.0.7",
     "cross-env": "^5.2.0",
+    "deep-diff": "^1.0.2",
     "office-ui-fabric-react": "^7.78.0",
     "whatwg-fetch": "^3.0.0"
   },
@@ -33,6 +36,7 @@
     "html-loader": "0.5.5",
     "html-webpack-plugin": "3.2.0",
     "image-webpack-loader": "^6.0.0",
+    "npm-run-all": "^4.1.5",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "shelljs": "^0.8.3",
@@ -43,7 +47,7 @@
     "tslint-react": "^4.0.0",
     "typescript": "^3.7.4",
     "url-loader": "1.0.1",
-    "webpack": "4.12.0",
+    "webpack": "^4.41.5",
     "webpack-cli": "3.0.8",
     "webpack-dev-server": "^3.8.0"
   }

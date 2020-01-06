@@ -1,3 +1,4 @@
+// https://github.com/OfficeDev/office-ui-fabric-react/blob/master/apps/fabric-website/src/components/Site/Site.tsx
 import { Async } from "office-ui-fabric-react";
 import * as React from "react";
 
@@ -45,8 +46,6 @@ export class MainView extends React.Component<IMainViewProps, IMainViewState> {
     this._async.dispose();
     window.removeEventListener("hashchange", this._handleRouteChange);
   }
-
-  // public U
 
   private _getNavData = (): Partial<IMainViewState> => {
     const pages = this.props.appDefinition.pages;
